@@ -18,16 +18,28 @@ function setup() {
 
 	//Create the Bodies Here.
 	roof = new Roof(width/2,height/2-100,400,20);
-	bobObject1 = new Bob(width/2,height/2+100,35);
+	/*bobObject1 = new Bob(width/2,height/2+100,35);
 	bobObject2 = new Bob(width/2 - 15,height/2+100,35);
 	bobObject3 = new Bob(width/2 - 30,height/2+100,35);
 	bobObject4 = new Bob(width/2 + 15,height/2+100,35);
-	bobObject5 = new Bob(width/2 + 30,height/2+100,35);
+	bobObject5 = new Bob(width/2 + 30,height/2+100,35);*/
+  
+
+
+  startBobPositionX=width/2; 
+  startBobPositionY=height/2+200; 
+  bobObject3=new Bob(startBobPositionX-bobDiameter*2,startBobPositionY,35); 
+  bobObject2=new Bob(startBobPositionX-bobDiameter,startBobPositionY,35); 
+  bobObject1=new Bob(startBobPositionX,startBobPositionY,35); 
+  bobObject4=new Bob(startBobPositionX+bobDiameter,startBobPositionY,35); 
+  bobObject5=new Bob(startBobPositionX+bobDiameter*2,startBobPositionY,35);
+  
   rope1 = new Rope(bobObject3.body,roof.body,-bobDiameter*2,0);
   rope2 = new Rope(bobObject2.body,roof.body,-bobDiameter,0);
   rope3 = new Rope(bobObject1.body,roof.body,0,0);
-  rope4 = new Rope(bobObject4.body,roof.body,bobDiameter,0)
-  rope5 = new Rope(bobObject5.body,roof.body,bobDiameter*2,0)
+  rope4 = new Rope(bobObject4.body,roof.body,bobDiameter,0);
+  rope5 = new Rope(bobObject5.body,roof.body,bobDiameter*2,0);
+
 
 	Engine.run(engine);
   
